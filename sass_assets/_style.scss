@@ -1,0 +1,310 @@
+@import "_reset";
+@import "_global";
+
+.wrapper{
+    margin: 0 auto;
+    min-width: 900px;
+    max-width: 1680px;
+    height: 100%;
+    padding: 0px 20px;
+    position: relative;
+    overflow: hidden;
+	h2{
+		font-size:18px;
+		color: $colorpri;
+		margin: 0; 
+		padding: 15px 0 15px 0;	
+	}
+	@media screen and ( max-width: 899px) {
+    	min-width: 767px;
+	}
+    @media screen and ( max-width: 767px) {
+    	min-width: 100%;
+    	max-width: 100%;
+	}
+}
+nav{
+	border-bottom:1px solid $colorborder;
+	margin: 0 0 20px 0;
+	ul{
+		li{
+			display:inline-block;
+			a{
+				display: block;
+				font-size: 14px;
+				color:$colorseco;
+				padding: 10px 0px;
+    			margin: 0 25px 0 0;
+				&.active{
+					color:$colorpri;
+					position: relative;
+					&:before{
+						content: "";
+						width: 100%;
+						height: 2px;
+						background: $colorbrand;
+						position: absolute;
+						left: 0;
+						bottom: -1px;
+					}
+				}
+			}
+			&.icon_bar{
+				display: none;
+				i{
+					border-top:2px solid $colorborder;
+					border-bottom:2px solid $colorborder;
+					display: block;
+				    width: 20px;
+				    height: 16px;
+				    position: relative;
+				    &:before{
+						content: "";
+						width: 100%;
+						height: 2px;
+						background: $colorborder;
+						position: absolute;
+						left: 0;
+						top: 5px;
+					}
+				}
+			}
+			@media screen and ( max-width: 767px) {
+		    	&:not(:first-child) {
+		    		display: none;
+		    	}
+		    	a{
+		    		margin:0;
+		    	}
+		    	&.icon_bar{
+		    		float: right;
+		    		display: block;
+		    	}
+			}
+		}
+	}
+	@media screen and ( max-width: 767px) {
+		&.nav_responsive{
+			position:relative;
+			ul{
+				li{
+					display:block;
+					&.icon_bar{
+						position: absolute;
+					    right: 0;
+					    top: 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+.column_left{
+	width:60%;
+	display:inline-block;
+	margin:10px 0 20px 0;
+	padding: 0 30px 0 0;
+    ul{
+    	li{
+    		min-height: 75px;
+    		border-bottom: 1px solid $colorborder;
+    		position: relative;
+    		margin: 0 0 15px 0;
+    		padding: 0 0 15px 0;
+    		&:last-child{
+    			border-bottom: 0;
+    			margin: 0;
+    		}
+    		.img_sec{
+	    		position:absolute;
+				left:0;
+				top:0;
+    			width: 60px;
+    			height: 60px;
+    			img{
+    				max-width: 100%;
+    				max-height: 100%;
+    			}
+    			&.round{
+    				img{
+    					border-radius:$border-round;
+    				}
+    			}
+    		}
+    		.info_sec{
+    			padding-left: 75px;
+    			.info{
+    				display: block;
+    				p{
+    					font-size: 12px;
+    					margin: 0 0 3px 0;
+    					color: $colorpri;
+    					&.source{
+    						font-size: 9px;
+    						color: $colorseco;
+    						text-transform: uppercase;
+    						margin: 0 0 5px 0;
+    						span{
+    							color: $colorbrand;
+    						}
+    					}
+    					&.name{
+    						font-size:16px;
+    						color: $colorpri;
+    						margin: 0 0 3px 0;
+    						text-transform: capitalize;
+    					}
+    					&.description{
+    						font-size:14px;
+    						color: $colorpri;
+    						margin: 0 0 5px 0;
+    						white-space: nowrap;
+						    overflow: hidden;
+						    text-overflow: ellipsis;
+    					}
+    					&.posted_on{
+    						font-size:12px;
+    						color: $colorseco;
+    						span{
+    							color: $colorbrand;
+    						}	
+    					}
+    				}
+    			}
+    			.contact{
+    				margin: 12px 0 0 0;
+    				p{
+						font-size:12px;
+						color: $colorbrand;
+						margin: 0 0 5px 0;
+						i{
+							display: inline-block;
+							width: 12px;
+							height: 12px;
+							margin: 1px 4px 0 0;
+    						vertical-align: top;
+							&.email{
+								background: url("images/email.png") no-repeat;
+								background-size: 11px;
+							}
+							&.tele{
+								background: url("images/tele.png") no-repeat;
+								background-size: 11px;
+							}
+							&.mobile{
+								background: url("images/mobile.png") no-repeat;
+								background-size: 11px;
+							}
+						}
+					}
+    			}
+    			&.split{
+	    			display: inline-block;
+	    			width: 100%;
+	    			.info{
+	    				float: left;
+	    				width: 50%;
+	    				margin: 0 20px 0 0;
+	    			}
+	    			.contact{
+	    				float: left;
+	    			}
+    			}
+    		}
+    	}
+    }
+    @media screen and ( max-width: 767px) {
+    	width: auto;
+	    display: block;
+	    margin:10px 0 20px 0;
+		padding: 0;
+	}
+}
+.column_right{
+	width: 40%;
+    float: right;
+    vertical-align: top;
+    margin: 10px 0 20px 0;
+    padding: 0 35px 0 30px;
+    border-left:solid 1px $colorborder;
+	h3{
+		font-size:14px;
+		color: $colorpri;
+		margin: 0 -35px 15px 0; 
+		padding: 0 0 10px 0;
+		border-bottom: 1px solid $colorborder;	
+	}
+	a{
+		font-size:14px;
+		color: $colorbrand;
+		margin: 15px 0 20px 0;
+		display: block;
+		&:last-child{
+			margin: 15px 0 0 0;
+		}
+	}
+	ul{
+    	li{
+    		min-height: 55px;
+    		position: relative;
+    		margin: 0 0 5px 0;
+    		padding: 0 0 5px 0;
+    		&:last-child{
+    			margin: 0;
+    		}
+    		.img_sec{
+	    		position:absolute;
+				left:0;
+				top:0;
+    			width: 40px;
+    			height: 40px;
+    			img{
+    				max-width: 100%;
+    				max-height: 100%;
+    			}
+    		}
+    		.info_sec{
+    			padding-left: 55px;
+    			.info{
+    				display: block;
+    				p{
+    					font-size: 12px;
+    					margin: 0 0 3px 0;
+    					color: $colorpri;
+    					&.description{
+    						font-size:14px;
+    						color: $colorpri;
+    						margin: 0 0 5px 0;
+    						white-space: nowrap;
+						    overflow: hidden;
+						    text-overflow: ellipsis;
+    					}
+    					&.posted_on{
+    						font-size:12px;
+    						color: $colorseco;
+    						span{
+    							color: $colorbrand;
+    						}	
+    					}
+    				}
+    			}
+    		}
+    	}
+    }
+    @media screen and ( max-width: 767px) {
+    	width: auto;
+	    float: none;
+	    display: block;
+	    margin: 10px 0 20px 0;
+	    padding: 0;
+	    border-left: 0;
+	    h3{
+			font-size:14px;
+			color: $colorpri;
+			margin: 0 0 15px 0; 
+			padding: 0 0 10px 0;
+			border-bottom: 1px solid $colorborder;	
+		}
+	}
+}
